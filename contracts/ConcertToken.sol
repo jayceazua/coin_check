@@ -15,6 +15,15 @@ contract ConcertToken {
     balanceOf[msg.sender] = _initialSupply;
     totalSupply = _initialSupply;
     // allocate the initial supply
+  }
+
+  // transfer
+  function transfer(address _to, uint256 _value) public view returns (bool success) {
+    // exceotion if account does not have enough
+    require(balanceOf[msg.sender] >= _value, "there is not enough...");
+    
+    // return bool
+    // transfer event
 
   }
 }
