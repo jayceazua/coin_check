@@ -8,7 +8,6 @@ And if you cannot attend anymore you do not lose your money, you can use that cr
 We use ERC20 standard.
 
 ### Requirements: 
-
 | ✅ | Criteria |  Points |
 |:----------:|:-------------:|:------:|
 |  | ÐApp fulfills the written, submitted proposal | `5` |
