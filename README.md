@@ -17,4 +17,4 @@ We use ERC20 standard.
 |  | Tests for all Smart Contract functions | 15 |
 |  | Uses Solidity >= v0.5.0 to define the Smart Contract | 10 |
 |  | Web3.js based UI that allows transactions to take place | 10 |
-|  | *Total* | 85 |
+|  | _Total_ | 85 |
