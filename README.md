@@ -10,7 +10,7 @@ We use ERC20 standard.
 ### Requirements: 
 
 | ✅ | Criteria |  Points |
-|----------|:-------------|:------|
+|:----------:|:-------------:|:------:|
 |  | ÐApp fulfills the written, submitted proposal | `5` |
 |  | Token adheres to `ERC-20` or `ERC-721` specification | `30` |
 |  | [NatSpec](https://solidity.readthedocs.io/en/v0.5.9/natspec-format.html) comments for all `class`, `interface`, and `function` definitions | `15` |
