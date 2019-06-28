@@ -1,8 +1,7 @@
 # Contractor Project Proposal
 
 #### Problem:
-Concerts have became unaffordable, also sometimes things happen and fans cannot return their tickets or get their refund. Losing out on money.
+Throughout your military career, you might be luck enough to come accross challenge coins or also known as challenge medallions. You will get coin checked by a superior or someone famous within the ranks and you hold that coin throughout your entire life. Valuable memory to hold. Problem is that they sometimes get lost, or people make fakes, or lie about how they received these challenge coins. 
 
 #### Solution:
-ConcertCoins allows for event goers to safely purchase tickets and if they are not able to go they can get credit for another concert. 
-Digitized way to purchase concert tickets that are refundable. 
+Military Challenge Medallion Foundation or Military Coin Check allows for military personnel to keep their authenicate coins in check. We keep a ledger of every coin they ordered and to who it was given to. Also, each coin depending on who it is will hold a value to later donate to an organization of your choice. 
