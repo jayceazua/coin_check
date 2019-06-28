@@ -1,0 +1,31 @@
+{
+  "name": "challnege_coins",
+  "version": "1.0.0",
+  "description": "Challenge Coins, each time you complete a challenge you earn a coin. Similar to the challenge coins our military service members get.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayceazua/concert_coin.git"
+  },
+  "author": "connect@jayceazua.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jayceazua/concert_coin/issues"
+  },
+  "homepage": "https://github.com/jayceazua/concert_coin#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^2.0.2",
+    "lite-server": "^2.3.0",
+    "truffle": "^5.0.2",
+    "truffle-contract": "^3.0.6"
+  }
+}
