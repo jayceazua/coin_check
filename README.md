@@ -27,4 +27,4 @@ We use ERC721 standard.
 #### Attributions
  - https://kauri.io/article/27640de6baba4aa99d57fd158af5c019/creating-a-flexible-non-fungible-token-(part-1)
  - DApp University
- - Droxbery - Raincoins
+ - Droxbery - Rainbowcoins
