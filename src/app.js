@@ -81,7 +81,7 @@ App = {
       $newChallengeTemplate.find("input")
         .prop("name", challengeId)
         .prop("checked", challengeCompleted)
-      // .on("click", App.toggleCompleted)
+        .on("click", App.toggleCompleted)
       if (challengeCompleted) {
         $("#completedChallengeList").append($newChallengeTemplate)
       } else {
@@ -97,6 +97,13 @@ App = {
     App.setLoading(true)
     const content = $("#newChallenge").val()
     await App.challengeList.createChallenge(content)
+    window.location.reload()
+  },
+
+  toggleCompleted: async (event) => {
+    App.setLoading(true)
+    const challengeId = event.target.name
+    await App.challengeList.toggleCompleted(challengeId)
     window.location.reload()
   },
 

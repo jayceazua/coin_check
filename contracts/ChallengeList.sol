@@ -32,6 +32,11 @@ contract ChallengeList {
     bool completed
   );
 
+  event ChallengeComplated(
+    uint id,
+    bool completed
+  );
+
   constructor() public {
     createChallenge("Visit the website militarycoincheck.com"); // activate your account
   }
@@ -46,6 +51,13 @@ contract ChallengeList {
     emit ChallengeCreated(challengeCount, _content, false);
   }
 
+  function toggleCompleted(uint _id) public {
+    Challenge memory _challenge = challenges[_id];
+    _challenge.completed = !_challenge.completed;
+    challenges[_id] = _challenge;
+    // if challenge gets complered send a token
+    emit ChallengeComplated(_id, _challenge.completed);
+  }
 
 
 }

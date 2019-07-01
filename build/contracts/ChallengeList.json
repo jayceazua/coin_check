@@ -49,6 +49,45 @@
       "type": "constructor"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "completed",
+          "type": "bool"
+        }
+      ],
+      "name": "ChallengeCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "completed",
+          "type": "bool"
+        }
+      ],
+      "name": "ChallengeComplated",
+      "type": "event"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -61,23 +100,37 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "toggleCompleted",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_content\",\"type\":\"string\"}],\"name\":\"createChallenge\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"challenges\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"content\",\"type\":\"string\"},{\"name\":\"completed\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"challengeCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/giru/concert_tokens/contracts/ChallengeList.sol\":\"ChallengeList\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/giru/concert_tokens/contracts/ChallengeList.sol\":{\"keccak256\":\"0x02a727253d281005c003e4b4f5cd57297b5fd744cbde3785f235a5e06526c6e0\",\"urls\":[\"bzzr://909b44537e1a894e3c4d89d0ccfe77387127d6c9a2310436a17a1e9608c67ece\"]}},\"version\":1}",
-  "bytecode": "0x60806040526000805534801561001457600080fd5b5061003c6040518060600160405280602781526020016104ee6027913961004160201b60201c565b610148565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361008e939085019291909101906100ad565b50604091909101516002909101805460ff191691151591909117905550565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100ee57805160ff191683800117855561011b565b8280016001018555821561011b579182015b8281111561011b578251825591602001919060010190610100565b5061012792915061012b565b5090565b61014591905b808211156101275760008155600101610131565b90565b610397806101576000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80636bf78c2f146100465780638f1d3776146100ee578063a2f0572514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a7230582048f0cb9d37253d221ebeae314e47b3e0089b26f5ae3dd44ad11430bf0a91111900295669736974207468652077656273697465206d696c6974617279636f696e636865636b2e636f6d",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80636bf78c2f146100465780638f1d3776146100ee578063a2f0572514610195575b600080fd5b6100ec6004803603602081101561005c57600080fd5b81019060208101813564010000000081111561007757600080fd5b82018360208201111561008957600080fd5b803590602001918460018302840111640100000000831117156100ab57600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506101af945050505050565b005b61010b6004803603602081101561010457600080fd5b503561021b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610158578181015183820152602001610140565b50505050905090810190601f1680156101855780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b61019d6102ca565b60408051918252519081900360200190f35b60008054600190810180835560408051606081018252828152602080820187815282840187905293865284815291909420845181559151805192936101fc939085019291909101906102d0565b50604091909101516002909101805460ff191691151591909117905550565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156102b75780601f1061028c576101008083540402835291602001916102b7565b820191906000526020600020905b81548152906001019060200180831161029a57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031157805160ff191683800117855561033e565b8280016001018555821561033e579182015b8281111561033e578251825591602001919060010190610323565b5061034a92915061034e565b5090565b61036891905b8082111561034a5760008155600101610354565b9056fea165627a7a7230582048f0cb9d37253d221ebeae314e47b3e0089b26f5ae3dd44ad11430bf0a9111190029",
-  "sourceMap": "25:983:0:-;;;81:1;52:30;;723:115;8:9:-1;5:2;;;30:1;27;20:12;5:2;723:115:0;750:58;;;;;;;;;;;;;;;;;;:15;;;:58;;:::i;:::-;25:983;;842:161;904:14;:17;;;;;;;;;956:42;;;;;;;;;;;;;;;;;;;;;;;;927:26;;;;;;;;;;:71;;;;;;;;:26;;:71;;;;;;;;;;;;:::i;:::-;-1:-1:-1;927:71:0;;;;;;;;;;;;-1:-1:-1;;927:71:0;;;;;;;;;;-1:-1:-1;842:161:0:o;25:983::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:983:0;;;-1:-1:-1;25:983:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "25:983:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:983:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;842:161;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;842:161:0;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;842:161:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;842:161:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;842:161:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;842:161:0;;-1:-1:-1;842:161:0;;-1:-1:-1;;;;;842:161:0:i;:::-;;674:44;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;674:44:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;674:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;52:30;;;:::i;:::-;;;;;;;;;;;;;;;;842:161;904:14;:17;;;;;;;;;956:42;;;;;;;;;;;;;;;;;;;;;;;;927:26;;;;;;;;;;:71;;;;;;;;:26;;:71;;;;;;;;;;;;:::i;:::-;-1:-1:-1;927:71:0;;;;;;;;;;;;-1:-1:-1;;927:71:0;;;;;;;;;;-1:-1:-1;842:161:0:o;674:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;674:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;674:44:0;;;;;;;-1:-1:-1;;674:44:0;;;:::o;52:30::-;;;;:::o;25:983::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;25:983:0;;;-1:-1:-1;25:983:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract ChallengeList {\n  uint public challengeCount = 0;\n\n  struct  Challenge {\n    uint id; // unsigned integer number cannot be negative\n    string content;\n    // Medallion Owner: billet\n    // ... unit/ organization not valuable peer to peer billet to billet more value\n    // future communication check up on the people you gave the medallion to\n    // make when needed\n    // Achievement Rank different coins different value\n    // EDIP -> id of the owner proof of rank\n    // Marine Corps Order -> approving\n    // who assigns the value... of each coin...\n    bool completed; // only gets allowed to turn true if password is correct\n  }\n\n  mapping(uint => Challenge) public challenges;\n\n  constructor() public {\n    createChallenge(\"Visit the website militarycoincheck.com\"); // activate your account\n  }\n\n  function createChallenge(string memory _content) public {\n    challengeCount ++;\n    challenges[challengeCount] = Challenge(challengeCount, _content, false);\n  }\n\n\n\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"toggleCompleted\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_content\",\"type\":\"string\"}],\"name\":\"createChallenge\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"challenges\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"content\",\"type\":\"string\"},{\"name\":\"completed\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"challengeCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"content\",\"type\":\"string\"},{\"indexed\":false,\"name\":\"completed\",\"type\":\"bool\"}],\"name\":\"ChallengeCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"completed\",\"type\":\"bool\"}],\"name\":\"ChallengeComplated\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"Jayce Azua\",\"details\":\"All function calls are currently implemented without side effects\",\"methods\":{\"createChallenge(string)\":{\"author\":\"Jayce Azua\",\"details\":\"simply increments the count of the challenges\",\"params\":{\"_content\":\"the description of the challenge\"},\"return\":\"nothing simply creates the challenge\"}},\"title\":\"Military Coin Check - Challenge Coins\"},\"userdoc\":{\"methods\":{\"createChallenge(string)\":{\"notice\":\"creates a smart contract for the challenges and increments the count each time it is created\"}},\"notice\":\"This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins\"}},\"settings\":{\"compilationTarget\":{\"/Users/giru/concert_tokens/contracts/ChallengeList.sol\":\"ChallengeList\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/giru/concert_tokens/contracts/ChallengeList.sol\":{\"keccak256\":\"0x9345d75715bb1efdd086354cc8bfe9e47c22f1504dc1ad55968d08535be6241c\",\"urls\":[\"bzzr://eb861cf6a2069ca447421b31566d7fd1cfba5c866d3901671f78c93138019a07\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061003c6040518060600160405280602781526020016108096027913961004160201b60201c565b610200565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361008e93908501929190910190610165565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507f70263e2d8c502159b1c248d7c806c57055182d8b436c4c27dc63f36db281e2a4600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561012657818101518382015260200161010e565b50505050905090810190601f1680156101535780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101a657805160ff19168380011785556101d3565b828001600101855582156101d3579182015b828111156101d35782518255916020019190600101906101b8565b506101df9291506101e3565b5090565b6101fd91905b808211156101df57600081556001016101e9565b90565b6105fa8061020f6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063455f5024146100515780636bf78c2f146100705780638f1d377614610116578063a2f05725146101bd575b600080fd5b61006e6004803603602081101561006757600080fd5b50356101d7565b005b61006e6004803603602081101561008657600080fd5b8101906020810181356401000000008111156100a157600080fd5b8201836020820111156100b357600080fd5b803590602001918460018302840111640100000000831117156100d557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610337945050505050565b6101336004803603602081101561012c57600080fd5b503561045b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610180578181015183820152602001610168565b50505050905090810190601f1680156101ad5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b6101c561050a565b60408051918252519081900360200190f35b6101df610510565b60008281526001602081815260409283902083516060810185528154815281840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193858401939092908301828280156102885780601f1061025d57610100808354040283529160200191610288565b820191906000526020600020905b81548152906001019060200180831161026b57829003601f168201915b50505091835250506002919091015460ff161515602091820152604080830180511590526000858152600180845291902083518155838301518051949550859491936102d993850192910190610533565b50604091820151600291909101805460ff1916911515919091179055818101518151848152901515602082015281517f63eb17df7fd3d0dcfa863845f1e4107bdb8c6100e7d84f1031a02acbbc71b9de929181900390910190a15050565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361038493908501929190910190610533565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507f70263e2d8c502159b1c248d7c806c57055182d8b436c4c27dc63f36db281e2a4600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561041c578181015183820152602001610404565b50505050905090810190601f1680156104495780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156104f75780601f106104cc576101008083540402835291602001916104f7565b820191906000526020600020905b8154815290600101906020018083116104da57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b604051806060016040528060008152602001606081526020016000151581525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061057457805160ff19168380011785556105a1565b828001600101855582156105a1579182015b828111156105a1578251825591602001919060010190610586565b506105ad9291506105b1565b5090565b6105cb91905b808211156105ad57600081556001016105b7565b9056fea165627a7a7230582080707d6b00c2bc23a95b4a0cee638e0a6f7c27c785e5f8ec72dbe0786d9692b600295669736974207468652077656273697465206d696c6974617279636f696e636865636b2e636f6d",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063455f5024146100515780636bf78c2f146100705780638f1d377614610116578063a2f05725146101bd575b600080fd5b61006e6004803603602081101561006757600080fd5b50356101d7565b005b61006e6004803603602081101561008657600080fd5b8101906020810181356401000000008111156100a157600080fd5b8201836020820111156100b357600080fd5b803590602001918460018302840111640100000000831117156100d557600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610337945050505050565b6101336004803603602081101561012c57600080fd5b503561045b565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b83811015610180578181015183820152602001610168565b50505050905090810190601f1680156101ad5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b6101c561050a565b60408051918252519081900360200190f35b6101df610510565b60008281526001602081815260409283902083516060810185528154815281840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193858401939092908301828280156102885780601f1061025d57610100808354040283529160200191610288565b820191906000526020600020905b81548152906001019060200180831161026b57829003601f168201915b50505091835250506002919091015460ff161515602091820152604080830180511590526000858152600180845291902083518155838301518051949550859491936102d993850192910190610533565b50604091820151600291909101805460ff1916911515919091179055818101518151848152901515602082015281517f63eb17df7fd3d0dcfa863845f1e4107bdb8c6100e7d84f1031a02acbbc71b9de929181900390910190a15050565b600080546001908101808355604080516060810182528281526020808201878152828401879052938652848152919094208451815591518051929361038493908501929190910190610533565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507f70263e2d8c502159b1c248d7c806c57055182d8b436c4c27dc63f36db281e2a4600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561041c578181015183820152602001610404565b50505050905090810190601f1680156104495780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b600160208181526000928352604092839020805481840180548651600296821615610100026000190190911695909504601f810185900485028601850190965285855290949193929091908301828280156104f75780601f106104cc576101008083540402835291602001916104f7565b820191906000526020600020905b8154815290600101906020018083116104da57829003601f168201915b5050506002909301549192505060ff1683565b60005481565b604051806060016040528060008152602001606081526020016000151581525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061057457805160ff19168380011785556105a1565b828001600101855582156105a1579182015b828111156105a1578251825591602001919060010190610586565b506105ad9291506105b1565b5090565b6105cb91905b808211156105ad57600081556001016105b7565b9056fea165627a7a7230582080707d6b00c2bc23a95b4a0cee638e0a6f7c27c785e5f8ec72dbe0786d9692b60029",
+  "sourceMap": "296:1788:0:-;;;352:1;323:30;;1146:115;8:9:-1;5:2;;;30:1;27;20:12;5:2;1146:115:0;1173:58;;;;;;;;;;;;;;;;;;:15;;;:58;;:::i;:::-;296:1788;;1569:221;1631:14;:17;;;;;;;;;1683:42;;;;;;;;;;;;;;;;;;;;;;;;1654:26;;;;;;;;;;:71;;;;;;;;:26;;:71;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1736:49;1753:14;;1769:8;1779:5;1736:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1736:49:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1569:221;:::o;296:1788::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;296:1788:0;;;-1:-1:-1;296:1788:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "296:1788:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;296:1788:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1794:286;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1794:286:0;;:::i;:::-;;1569:221;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1569:221:0;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;1569:221:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1569:221:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1569:221:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;1569:221:0;;-1:-1:-1;1569:221:0;;-1:-1:-1;;;;;1569:221:0:i;946:44::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;946:44:0;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;946:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;323:30;;;:::i;:::-;;;;;;;;;;;;;;;;1794:286;1842:27;;:::i;:::-;1872:15;;;;:10;:15;;;;;;;;;1842:45;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;1842:45:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;1872:15;;1842:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;1842:45:0;;;-1:-1:-1;;1842:45:0;;;;;;;;;;;;;;;1917:20;;;;;;1916:21;1893:44;;1842:45;1943:15;;;1842:45;1943:15;;;;;;:28;;;;;;;;;;1842:45;;-1:-1:-1;1842:45:0;;1943:15;;:28;;;;;;;;;:::i;:::-;-1:-1:-1;1943:28:0;;;;;;;;;;;;-1:-1:-1;;1943:28:0;;;;;;;;;;2054:20;;;;2030:45;;;;;;;;;;;;;;;;;;;;;;;;;1794:286;;:::o;1569:221::-;1631:14;:17;;;;;;;;;1683:42;;;;;;;;;;;;;;;;;;;;;;;;1654:26;;;;;;;;;;:71;;;;;;;;:26;;:71;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1736:49;1753:14;;1769:8;1779:5;1736:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1736:49:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1569:221;:::o;946:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;946:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;946:44:0;;;;;;;-1:-1:-1;;946:44:0;;;:::o;323:30::-;;;;:::o;296:1788::-;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;296:1788:0;;;-1:-1:-1;296:1788:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\n/// @title Military Coin Check - Challenge Coins\n/// @author Jayce Azua\n/// @notice This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins\n/// @dev All function calls are currently implemented without side effects\n\ncontract ChallengeList {\n  uint public challengeCount = 0;\n\n  struct  Challenge {\n\n    uint id; // unsigned integer number cannot be negative\n    string content;\n    // Medallion Owner: billet\n    // ... unit/ organization not valuable peer to peer billet to billet more value\n    // future communication check up on the people you gave the medallion to\n    // make when needed\n    // Achievement Rank different coins different value\n    // EDIP -> id of the owner proof of rank\n    // Marine Corps Order -> approving\n    // who assigns the value... of each coin...\n    bool completed; // only gets allowed to turn true if password is correct\n  }\n\n  mapping(uint => Challenge) public challenges;\n\n\n  event ChallengeCreated(\n    uint id,\n    string content,\n    bool completed\n  );\n\n  event ChallengeComplated(\n    uint id,\n    bool completed\n  );\n\n  constructor() public {\n    createChallenge(\"Visit the website militarycoincheck.com\"); // activate your account\n  }\n    /// @author Jayce Azua\n    /// @notice creates a smart contract for the challenges and increments the count each time it is created\n    /// @dev simply increments the count of the challenges\n    /// @param _content the description of the challenge\n    /// @return nothing simply creates the challenge\n  function createChallenge(string memory _content) public {\n    challengeCount ++;\n    challenges[challengeCount] = Challenge(challengeCount, _content, false);\n    emit ChallengeCreated(challengeCount, _content, false);\n  }\n\n  function toggleCompleted(uint _id) public {\n    Challenge memory _challenge = challenges[_id];\n    _challenge.completed = !_challenge.completed;\n    challenges[_id] = _challenge;\n    // if challenge gets complered send a token\n    emit ChallengeComplated(_id, _challenge.completed);\n  }\n\n\n}",
   "sourcePath": "/Users/giru/concert_tokens/contracts/ChallengeList.sol",
   "ast": {
     "absolutePath": "/Users/giru/concert_tokens/contracts/ChallengeList.sol",
     "exportedSymbols": {
       "ChallengeList": [
-        43
+        95
       ]
     },
-    "id": 44,
+    "id": 96,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -95,11 +148,11 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": null,
+        "documentation": "@title Military Coin Check - Challenge Coins\n @author Jayce Azua\n @notice This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins\n @dev All function calls are currently implemented without side effects",
         "fullyImplemented": true,
-        "id": 43,
+        "id": 95,
         "linearizedBaseContracts": [
-          43
+          95
         ],
         "name": "ChallengeList",
         "nodeType": "ContractDefinition",
@@ -109,8 +162,8 @@
             "id": 4,
             "name": "challengeCount",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "52:30:0",
+            "scope": 95,
+            "src": "323:30:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -121,7 +174,7 @@
               "id": 2,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "52:4:0",
+              "src": "323:4:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -137,7 +190,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "81:1:0",
+              "src": "352:1:0",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -157,7 +210,7 @@
                 "name": "id",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "111:7:0",
+                "src": "383:7:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -168,7 +221,7 @@
                   "id": 5,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "111:4:0",
+                  "src": "383:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -183,7 +236,7 @@
                 "name": "content",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "170:14:0",
+                "src": "442:14:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -194,7 +247,7 @@
                   "id": 7,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "170:6:0",
+                  "src": "442:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -209,7 +262,7 @@
                 "name": "completed",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "594:14:0",
+                "src": "866:14:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -220,7 +273,7 @@
                   "id": 9,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "594:4:0",
+                  "src": "866:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -232,8 +285,8 @@
             ],
             "name": "Challenge",
             "nodeType": "StructDefinition",
-            "scope": 43,
-            "src": "87:583:0",
+            "scope": 95,
+            "src": "358:584:0",
             "visibility": "public"
           },
           {
@@ -241,8 +294,8 @@
             "id": 15,
             "name": "challenges",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "674:44:0",
+            "scope": 95,
+            "src": "946:44:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -255,14 +308,14 @@
                 "id": 12,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "682:4:0",
+                "src": "954:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "674:26:0",
+              "src": "946:26:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
                 "typeString": "mapping(uint256 => struct ChallengeList.Challenge)"
@@ -273,7 +326,7 @@
                 "name": "Challenge",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 11,
-                "src": "690:9:0",
+                "src": "962:9:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Challenge_$11_storage_ptr",
                   "typeString": "struct ChallengeList.Challenge"
@@ -284,10 +337,175 @@
             "visibility": "public"
           },
           {
-            "body": {
+            "anonymous": false,
+            "documentation": null,
+            "id": 23,
+            "name": "ChallengeCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
               "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1024:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1024:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1037:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1037:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1057:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1057:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1018:57:0"
+            },
+            "src": "996:80:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 29,
+            "name": "ChallengeComplated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 28,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "1110:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "1123:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1123:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1104:37:0"
+            },
+            "src": "1080:62:0"
+          },
+          {
+            "body": {
+              "id": 36,
               "nodeType": "Block",
-              "src": "744:94:0",
+              "src": "1167:94:0",
               "statements": [
                 {
                   "expression": {
@@ -296,14 +514,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "5669736974207468652077656273697465206d696c6974617279636f696e636865636b2e636f6d",
-                        "id": 19,
+                        "id": 33,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "766:41:0",
+                        "src": "1189:41:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b07579add6ae73b5f9c9dd8b54339f4e0d0d5f56daf8a2ddab264b2d5eb17151",
@@ -319,18 +537,18 @@
                           "typeString": "literal_string \"Visit the website militarycoincheck.com\""
                         }
                       ],
-                      "id": 18,
+                      "id": 32,
                       "name": "createChallenge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 42,
-                      "src": "750:15:0",
+                      "referencedDeclaration": 62,
+                      "src": "1173:15:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 20,
+                    "id": 34,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -338,53 +556,53 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "750:58:0",
+                    "src": "1173:58:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 21,
+                  "id": 35,
                   "nodeType": "ExpressionStatement",
-                  "src": "750:58:0"
+                  "src": "1173:58:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 23,
+            "id": 37,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 16,
+              "id": 30,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "734:2:0"
+              "src": "1157:2:0"
             },
             "returnParameters": {
-              "id": 17,
+              "id": 31,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "744:0:0"
+              "src": "1167:0:0"
             },
-            "scope": 43,
-            "src": "723:115:0",
+            "scope": 95,
+            "src": "1146:115:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 41,
+              "id": 61,
               "nodeType": "Block",
-              "src": "898:105:0",
+              "src": "1625:165:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 43,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -392,15 +610,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "904:17:0",
+                    "src": "1631:17:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 42,
                       "name": "challengeCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "904:14:0",
+                      "src": "1631:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -411,14 +629,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 44,
                   "nodeType": "ExpressionStatement",
-                  "src": "904:17:0"
+                  "src": "1631:17:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 39,
+                    "id": 53,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -427,26 +645,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 31,
+                        "id": 45,
                         "name": "challenges",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 15,
-                        "src": "927:10:0",
+                        "src": "1654:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
                           "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
                         }
                       },
-                      "id": 33,
+                      "id": 47,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 46,
                         "name": "challengeCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4,
-                        "src": "938:14:0",
+                        "src": "1665:14:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -457,7 +675,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "927:26:0",
+                      "src": "1654:26:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Challenge_$11_storage",
                         "typeString": "struct ChallengeList.Challenge storage ref"
@@ -470,12 +688,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 35,
+                          "id": 49,
                           "name": "challengeCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4,
-                          "src": "966:14:0",
+                          "src": "1693:14:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -483,12 +701,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 36,
+                          "id": 50,
                           "name": "_content",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 25,
-                          "src": "982:8:0",
+                          "referencedDeclaration": 39,
+                          "src": "1709:8:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -497,14 +715,14 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "66616c7365",
-                          "id": 37,
+                          "id": 51,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "992:5:0",
+                          "src": "1719:5:0",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -528,18 +746,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 34,
+                        "id": 48,
                         "name": "Challenge",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "956:9:0",
+                        "src": "1683:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Challenge_$11_storage_ptr_$",
                           "typeString": "type(struct ChallengeList.Challenge storage pointer)"
                         }
                       },
-                      "id": 38,
+                      "id": 52,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -547,42 +765,135 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "956:42:0",
+                      "src": "1683:42:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Challenge_$11_memory",
                         "typeString": "struct ChallengeList.Challenge memory"
                       }
                     },
-                    "src": "927:71:0",
+                    "src": "1654:71:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Challenge_$11_storage",
                       "typeString": "struct ChallengeList.Challenge storage ref"
                     }
                   },
-                  "id": 40,
+                  "id": 54,
                   "nodeType": "ExpressionStatement",
-                  "src": "927:71:0"
+                  "src": "1654:71:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 56,
+                        "name": "challengeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "1753:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 39,
+                        "src": "1769:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 58,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1779:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 55,
+                      "name": "ChallengeCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23,
+                      "src": "1736:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool)"
+                      }
+                    },
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1736:49:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 60,
+                  "nodeType": "EmitStatement",
+                  "src": "1731:54:0"
                 }
               ]
             },
-            "documentation": null,
-            "id": 42,
+            "documentation": "@author Jayce Azua\n @notice creates a smart contract for the challenges and increments the count each time it is created\n @dev simply increments the count of the challenges\n @param _content the description of the challenge\n @return nothing simply creates the challenge",
+            "id": 62,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createChallenge",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 26,
+              "id": 40,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 39,
                   "name": "_content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 42,
-                  "src": "867:22:0",
+                  "scope": 62,
+                  "src": "1594:22:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -590,10 +901,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 38,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "867:6:0",
+                    "src": "1594:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -603,35 +914,427 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "866:24:0"
+              "src": "1593:24:0"
             },
             "returnParameters": {
-              "id": 27,
+              "id": 41,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "898:0:0"
+              "src": "1625:0:0"
             },
-            "scope": 43,
-            "src": "842:161:0",
+            "scope": 95,
+            "src": "1569:221:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 93,
+              "nodeType": "Block",
+              "src": "1836:244:0",
+              "statements": [
+                {
+                  "assignments": [
+                    68
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 68,
+                      "name": "_challenge",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 93,
+                      "src": "1842:27:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                        "typeString": "struct ChallengeList.Challenge"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 67,
+                        "name": "Challenge",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 11,
+                        "src": "1842:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$11_storage_ptr",
+                          "typeString": "struct ChallengeList.Challenge"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 72,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 69,
+                      "name": "challenges",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15,
+                      "src": "1872:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
+                        "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
+                      }
+                    },
+                    "id": 71,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 70,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 64,
+                      "src": "1883:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1872:15:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                      "typeString": "struct ChallengeList.Challenge storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1842:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 79,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "_challenge",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "1893:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                          "typeString": "struct ChallengeList.Challenge memory"
+                        }
+                      },
+                      "id": 75,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "completed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "1893:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 78,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "1916:21:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 76,
+                          "name": "_challenge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 68,
+                          "src": "1917:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                            "typeString": "struct ChallengeList.Challenge memory"
+                          }
+                        },
+                        "id": 77,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "1917:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1893:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 80,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1893:44:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 85,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 81,
+                        "name": "challenges",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "1943:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
+                          "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
+                        }
+                      },
+                      "id": 83,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 82,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "1954:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1943:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                        "typeString": "struct ChallengeList.Challenge storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 84,
+                      "name": "_challenge",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 68,
+                      "src": "1961:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                        "typeString": "struct ChallengeList.Challenge memory"
+                      }
+                    },
+                    "src": "1943:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                      "typeString": "struct ChallengeList.Challenge storage ref"
+                    }
+                  },
+                  "id": 86,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1943:28:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 88,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "2049:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_challenge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 68,
+                          "src": "2054:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                            "typeString": "struct ChallengeList.Challenge memory"
+                          }
+                        },
+                        "id": 90,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "2054:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 87,
+                      "name": "ChallengeComplated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "2030:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2030:45:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "EmitStatement",
+                  "src": "2025:50:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 94,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleCompleted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 65,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "1819:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1819:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1818:10:0"
+            },
+            "returnParameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1836:0:0"
+            },
+            "scope": 95,
+            "src": "1794:286:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 44,
-        "src": "25:983:0"
+        "scope": 96,
+        "src": "296:1788:0"
       }
     ],
-    "src": "0:1008:0"
+    "src": "0:2084:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/giru/concert_tokens/contracts/ChallengeList.sol",
     "exportedSymbols": {
       "ChallengeList": [
-        43
+        95
       ]
     },
-    "id": 44,
+    "id": 96,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -649,11 +1352,11 @@
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
-        "documentation": null,
+        "documentation": "@title Military Coin Check - Challenge Coins\n @author Jayce Azua\n @notice This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins\n @dev All function calls are currently implemented without side effects",
         "fullyImplemented": true,
-        "id": 43,
+        "id": 95,
         "linearizedBaseContracts": [
-          43
+          95
         ],
         "name": "ChallengeList",
         "nodeType": "ContractDefinition",
@@ -663,8 +1366,8 @@
             "id": 4,
             "name": "challengeCount",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "52:30:0",
+            "scope": 95,
+            "src": "323:30:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -675,7 +1378,7 @@
               "id": 2,
               "name": "uint",
               "nodeType": "ElementaryTypeName",
-              "src": "52:4:0",
+              "src": "323:4:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -691,7 +1394,7 @@
               "kind": "number",
               "lValueRequested": false,
               "nodeType": "Literal",
-              "src": "81:1:0",
+              "src": "352:1:0",
               "subdenomination": null,
               "typeDescriptions": {
                 "typeIdentifier": "t_rational_0_by_1",
@@ -711,7 +1414,7 @@
                 "name": "id",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "111:7:0",
+                "src": "383:7:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -722,7 +1425,7 @@
                   "id": 5,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
-                  "src": "111:4:0",
+                  "src": "383:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint256",
                     "typeString": "uint256"
@@ -737,7 +1440,7 @@
                 "name": "content",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "170:14:0",
+                "src": "442:14:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -748,7 +1451,7 @@
                   "id": 7,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "170:6:0",
+                  "src": "442:6:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -763,7 +1466,7 @@
                 "name": "completed",
                 "nodeType": "VariableDeclaration",
                 "scope": 11,
-                "src": "594:14:0",
+                "src": "866:14:0",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -774,7 +1477,7 @@
                   "id": 9,
                   "name": "bool",
                   "nodeType": "ElementaryTypeName",
-                  "src": "594:4:0",
+                  "src": "866:4:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_bool",
                     "typeString": "bool"
@@ -786,8 +1489,8 @@
             ],
             "name": "Challenge",
             "nodeType": "StructDefinition",
-            "scope": 43,
-            "src": "87:583:0",
+            "scope": 95,
+            "src": "358:584:0",
             "visibility": "public"
           },
           {
@@ -795,8 +1498,8 @@
             "id": 15,
             "name": "challenges",
             "nodeType": "VariableDeclaration",
-            "scope": 43,
-            "src": "674:44:0",
+            "scope": 95,
+            "src": "946:44:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -809,14 +1512,14 @@
                 "id": 12,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "682:4:0",
+                "src": "954:4:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
                 }
               },
               "nodeType": "Mapping",
-              "src": "674:26:0",
+              "src": "946:26:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
                 "typeString": "mapping(uint256 => struct ChallengeList.Challenge)"
@@ -827,7 +1530,7 @@
                 "name": "Challenge",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 11,
-                "src": "690:9:0",
+                "src": "962:9:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_Challenge_$11_storage_ptr",
                   "typeString": "struct ChallengeList.Challenge"
@@ -838,10 +1541,175 @@
             "visibility": "public"
           },
           {
-            "body": {
+            "anonymous": false,
+            "documentation": null,
+            "id": 23,
+            "name": "ChallengeCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
               "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1024:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1024:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1037:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1037:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 23,
+                  "src": "1057:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1057:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1018:57:0"
+            },
+            "src": "996:80:0"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 29,
+            "name": "ChallengeComplated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 28,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 25,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "1110:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27,
+                  "indexed": false,
+                  "name": "completed",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "1123:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 26,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1123:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1104:37:0"
+            },
+            "src": "1080:62:0"
+          },
+          {
+            "body": {
+              "id": 36,
               "nodeType": "Block",
-              "src": "744:94:0",
+              "src": "1167:94:0",
               "statements": [
                 {
                   "expression": {
@@ -850,14 +1718,14 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "5669736974207468652077656273697465206d696c6974617279636f696e636865636b2e636f6d",
-                        "id": 19,
+                        "id": 33,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "766:41:0",
+                        "src": "1189:41:0",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_b07579add6ae73b5f9c9dd8b54339f4e0d0d5f56daf8a2ddab264b2d5eb17151",
@@ -873,18 +1741,18 @@
                           "typeString": "literal_string \"Visit the website militarycoincheck.com\""
                         }
                       ],
-                      "id": 18,
+                      "id": 32,
                       "name": "createChallenge",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 42,
-                      "src": "750:15:0",
+                      "referencedDeclaration": 62,
+                      "src": "1173:15:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (string memory)"
                       }
                     },
-                    "id": 20,
+                    "id": 34,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -892,53 +1760,53 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "750:58:0",
+                    "src": "1173:58:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 21,
+                  "id": 35,
                   "nodeType": "ExpressionStatement",
-                  "src": "750:58:0"
+                  "src": "1173:58:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 23,
+            "id": 37,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 16,
+              "id": 30,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "734:2:0"
+              "src": "1157:2:0"
             },
             "returnParameters": {
-              "id": 17,
+              "id": 31,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "744:0:0"
+              "src": "1167:0:0"
             },
-            "scope": 43,
-            "src": "723:115:0",
+            "scope": 95,
+            "src": "1146:115:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 41,
+              "id": 61,
               "nodeType": "Block",
-              "src": "898:105:0",
+              "src": "1625:165:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 29,
+                    "id": 43,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -946,15 +1814,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "904:17:0",
+                    "src": "1631:17:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 28,
+                      "id": 42,
                       "name": "challengeCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "904:14:0",
+                      "src": "1631:14:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -965,14 +1833,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 30,
+                  "id": 44,
                   "nodeType": "ExpressionStatement",
-                  "src": "904:17:0"
+                  "src": "1631:17:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 39,
+                    "id": 53,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -981,26 +1849,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 31,
+                        "id": 45,
                         "name": "challenges",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 15,
-                        "src": "927:10:0",
+                        "src": "1654:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
                           "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
                         }
                       },
-                      "id": 33,
+                      "id": 47,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 46,
                         "name": "challengeCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 4,
-                        "src": "938:14:0",
+                        "src": "1665:14:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1011,7 +1879,7 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
-                      "src": "927:26:0",
+                      "src": "1654:26:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Challenge_$11_storage",
                         "typeString": "struct ChallengeList.Challenge storage ref"
@@ -1024,12 +1892,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 35,
+                          "id": 49,
                           "name": "challengeCount",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 4,
-                          "src": "966:14:0",
+                          "src": "1693:14:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1037,12 +1905,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 36,
+                          "id": 50,
                           "name": "_content",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 25,
-                          "src": "982:8:0",
+                          "referencedDeclaration": 39,
+                          "src": "1709:8:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_string_memory_ptr",
                             "typeString": "string memory"
@@ -1051,14 +1919,14 @@
                         {
                           "argumentTypes": null,
                           "hexValue": "66616c7365",
-                          "id": 37,
+                          "id": 51,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
                           "kind": "bool",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "992:5:0",
+                          "src": "1719:5:0",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
@@ -1082,18 +1950,18 @@
                             "typeString": "bool"
                           }
                         ],
-                        "id": 34,
+                        "id": 48,
                         "name": "Challenge",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 11,
-                        "src": "956:9:0",
+                        "src": "1683:9:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_Challenge_$11_storage_ptr_$",
                           "typeString": "type(struct ChallengeList.Challenge storage pointer)"
                         }
                       },
-                      "id": 38,
+                      "id": 52,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1101,42 +1969,135 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "956:42:0",
+                      "src": "1683:42:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_Challenge_$11_memory",
                         "typeString": "struct ChallengeList.Challenge memory"
                       }
                     },
-                    "src": "927:71:0",
+                    "src": "1654:71:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_Challenge_$11_storage",
                       "typeString": "struct ChallengeList.Challenge storage ref"
                     }
                   },
-                  "id": 40,
+                  "id": 54,
                   "nodeType": "ExpressionStatement",
-                  "src": "927:71:0"
+                  "src": "1654:71:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 56,
+                        "name": "challengeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4,
+                        "src": "1753:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 57,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 39,
+                        "src": "1769:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 58,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1779:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 55,
+                      "name": "ChallengeCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 23,
+                      "src": "1736:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool)"
+                      }
+                    },
+                    "id": 59,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1736:49:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 60,
+                  "nodeType": "EmitStatement",
+                  "src": "1731:54:0"
                 }
               ]
             },
-            "documentation": null,
-            "id": 42,
+            "documentation": "@author Jayce Azua\n @notice creates a smart contract for the challenges and increments the count each time it is created\n @dev simply increments the count of the challenges\n @param _content the description of the challenge\n @return nothing simply creates the challenge",
+            "id": 62,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "createChallenge",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 26,
+              "id": 40,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 25,
+                  "id": 39,
                   "name": "_content",
                   "nodeType": "VariableDeclaration",
-                  "scope": 42,
-                  "src": "867:22:0",
+                  "scope": 62,
+                  "src": "1594:22:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1144,10 +2105,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 24,
+                    "id": 38,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "867:6:0",
+                    "src": "1594:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1157,26 +2118,418 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "866:24:0"
+              "src": "1593:24:0"
             },
             "returnParameters": {
-              "id": 27,
+              "id": 41,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "898:0:0"
+              "src": "1625:0:0"
             },
-            "scope": 43,
-            "src": "842:161:0",
+            "scope": 95,
+            "src": "1569:221:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 93,
+              "nodeType": "Block",
+              "src": "1836:244:0",
+              "statements": [
+                {
+                  "assignments": [
+                    68
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 68,
+                      "name": "_challenge",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 93,
+                      "src": "1842:27:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                        "typeString": "struct ChallengeList.Challenge"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 67,
+                        "name": "Challenge",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 11,
+                        "src": "1842:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$11_storage_ptr",
+                          "typeString": "struct ChallengeList.Challenge"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 72,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 69,
+                      "name": "challenges",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15,
+                      "src": "1872:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
+                        "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
+                      }
+                    },
+                    "id": 71,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 70,
+                      "name": "_id",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 64,
+                      "src": "1883:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1872:15:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                      "typeString": "struct ChallengeList.Challenge storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1842:45:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 79,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "_challenge",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "1893:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                          "typeString": "struct ChallengeList.Challenge memory"
+                        }
+                      },
+                      "id": 75,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "completed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "1893:20:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 78,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "!",
+                      "prefix": true,
+                      "src": "1916:21:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 76,
+                          "name": "_challenge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 68,
+                          "src": "1917:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                            "typeString": "struct ChallengeList.Challenge memory"
+                          }
+                        },
+                        "id": 77,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "1917:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "1893:44:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 80,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1893:44:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 85,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 81,
+                        "name": "challenges",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "1943:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Challenge_$11_storage_$",
+                          "typeString": "mapping(uint256 => struct ChallengeList.Challenge storage ref)"
+                        }
+                      },
+                      "id": 83,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 82,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "1954:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1943:15:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                        "typeString": "struct ChallengeList.Challenge storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 84,
+                      "name": "_challenge",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 68,
+                      "src": "1961:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                        "typeString": "struct ChallengeList.Challenge memory"
+                      }
+                    },
+                    "src": "1943:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Challenge_$11_storage",
+                      "typeString": "struct ChallengeList.Challenge storage ref"
+                    }
+                  },
+                  "id": 86,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1943:28:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 88,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "2049:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 89,
+                          "name": "_challenge",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 68,
+                          "src": "2054:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Challenge_$11_memory_ptr",
+                            "typeString": "struct ChallengeList.Challenge memory"
+                          }
+                        },
+                        "id": 90,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10,
+                        "src": "2054:20:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 87,
+                      "name": "ChallengeComplated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "2030:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool)"
+                      }
+                    },
+                    "id": 91,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2030:45:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 92,
+                  "nodeType": "EmitStatement",
+                  "src": "2025:50:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 94,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "toggleCompleted",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 65,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "1819:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1819:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1818:10:0"
+            },
+            "returnParameters": {
+              "id": 66,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1836:0:0"
+            },
+            "scope": 95,
+            "src": "1794:286:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 44,
-        "src": "25:983:0"
+        "scope": 96,
+        "src": "296:1788:0"
       }
     ],
-    "src": "0:1008:0"
+    "src": "0:2084:0"
   },
   "compiler": {
     "name": "solc",
@@ -1184,18 +2537,77 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0x70263e2d8c502159b1c248d7c806c57055182d8b436c4c27dc63f36db281e2a4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "completed",
+              "type": "bool"
+            }
+          ],
+          "name": "ChallengeCreated",
+          "type": "event",
+          "signature": "0x70263e2d8c502159b1c248d7c806c57055182d8b436c4c27dc63f36db281e2a4"
+        },
+        "0x63eb17df7fd3d0dcfa863845f1e4107bdb8c6100e7d84f1031a02acbbc71b9de": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "completed",
+              "type": "bool"
+            }
+          ],
+          "name": "ChallengeComplated",
+          "type": "event",
+          "signature": "0x63eb17df7fd3d0dcfa863845f1e4107bdb8c6100e7d84f1031a02acbbc71b9de"
+        }
+      },
       "links": {},
-      "address": "0xEc9dE0bD3f372579123BFbA7Cd9a627De01553ED",
-      "transactionHash": "0xfbedeff90dbdf26eb81dbd9efa543698b7aa550f900f51eaf3bb14bf70f9742b"
+      "address": "0x08b55d58cd872A054041dd70E6bE4135119D3032",
+      "transactionHash": "0x8fc2b0dd2478fed306730d7120b9a291b27cb43b62b5ababce80879941847922"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-01T00:52:12.499Z",
+  "updatedAt": "2019-07-01T03:01:43.417Z",
   "devdoc": {
-    "methods": {}
+    "author": "Jayce Azua",
+    "details": "All function calls are currently implemented without side effects",
+    "methods": {
+      "createChallenge(string)": {
+        "author": "Jayce Azua",
+        "details": "simply increments the count of the challenges",
+        "params": {
+          "_content": "the description of the challenge"
+        },
+        "return": "nothing simply creates the challenge"
+      }
+    },
+    "title": "Military Coin Check - Challenge Coins"
   },
   "userdoc": {
-    "methods": {}
+    "methods": {
+      "createChallenge(string)": {
+        "notice": "creates a smart contract for the challenges and increments the count each time it is created"
+      }
+    },
+    "notice": "This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins"
   }
 }
