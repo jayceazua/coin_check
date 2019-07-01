@@ -1,7 +1,14 @@
 # Military Coin Check
 
 ### Description:
-Military Challenge Medallion Foundation. Please read proposal.
+Military Challenge Medallion Foundation. Please read [proposal](proposal.md).
+
+### Environment
+ - Latest Node LTS Release (v10.16.0)
+ - Node Version Manager (nvm)
+ - Truffle v5.0.22
+ - Solidity ^0.5.0
+ - ganache-cli
 
 ### Token:
 We use ERC721 standard.
@@ -16,3 +23,8 @@ We use ERC721 standard.
 | ✅ | Uses Solidity `>= v0.5.0` to define the Smart Contract | `10` |
 | ✅ | Web3.js based UI that allows transactions to take place | `10` |
 |  | _Total_ | `85` |
+
+#### Attributions
+ - https://kauri.io/article/27640de6baba4aa99d57fd158af5c019/creating-a-flexible-non-fungible-token-(part-1)
+ - DApp University
+ - Droxbery - Raincoins

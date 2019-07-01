@@ -32,7 +32,7 @@ contract ChallengeList {
     bool completed
   );
 
-  event ChallengeComplated(
+  event ChallengeCompleted(
     uint id,
     bool completed
   );
@@ -46,17 +46,21 @@ contract ChallengeList {
     /// @param _content the description of the challenge
     /// @return nothing simply creates the challenge
   function createChallenge(string memory _content) public {
-    challengeCount ++;
+    challengeCount += 1;
     challenges[challengeCount] = Challenge(challengeCount, _content, false);
     emit ChallengeCreated(challengeCount, _content, false);
   }
-
+    /// @author Jayce Azua
+    /// @notice toggles and checks off the challenge that was completed
+    /// @dev toggles true and false if the challenge is marked as completed
+    /// @param _id the user id
+    /// @return nothing simply marks off the challenge to completed or not
   function toggleCompleted(uint _id) public {
     Challenge memory _challenge = challenges[_id];
     _challenge.completed = !_challenge.completed;
     challenges[_id] = _challenge;
     // if challenge gets complered send a token
-    emit ChallengeComplated(_id, _challenge.completed);
+    emit ChallengeCompleted(_id, _challenge.completed);
   }
 
 
