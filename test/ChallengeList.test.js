@@ -23,12 +23,14 @@ contract('ChallengeList', (accounts) => {
   })
 
   it('creates challenges', async () => {
-    const result = await this.challengeList.createChallenge('A new challenge')
+    const result = await this.challengeList.createChallenge('Another challenge')
     const challengeCount = await this.challengeList.challengeCount()
     assert.equal(challengeCount, 2)
+    console.log(result) // get the logs args for the object
     const event = result.logs[0].args
+    console.log(event)
     assert.equal(event.id.toNumber(), 2)
-    assert.equal(event.content, 'A new challenge')
+    assert.equal(event.content, 'Another challenge')
     assert.equal(event.completed, false)
   })
 

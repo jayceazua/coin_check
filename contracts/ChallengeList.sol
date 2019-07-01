@@ -25,17 +25,25 @@ contract ChallengeList {
 
   mapping(uint => Challenge) public challenges;
 
+
+  event ChallengeCreated(
+    uint id,
+    string content,
+    bool completed
+  );
+
   constructor() public {
     createChallenge("Visit the website militarycoincheck.com"); // activate your account
   }
     /// @author Jayce Azua
     /// @notice creates a smart contract for the challenges and increments the count each time it is created
     /// @dev simply increments the count of the challenges
-    /// @param content the description of the challenge
+    /// @param _content the description of the challenge
     /// @return nothing simply creates the challenge
   function createChallenge(string memory _content) public {
     challengeCount ++;
     challenges[challengeCount] = Challenge(challengeCount, _content, false);
+    emit ChallengeCreated(challengeCount, _content, false);
   }
 
 

@@ -93,6 +93,13 @@ App = {
 
   },
 
+  createChallenge: async () => {
+    App.setLoading(true)
+    const content = $("#newChallenge").val()
+    await App.challengeList.createChallenge(content)
+    window.location.reload()
+  },
+
   setLoading: (bool) => {
     App.loading = bool
     const loader = $("#loader")
