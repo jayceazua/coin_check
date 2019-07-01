@@ -2114,12 +2114,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x6dFa9fBdeec47783Cafe35b4f2A2BcBE0106F53a",
-      "transactionHash": "0xf8e9baff22a5c7fa699e4a759faac464807e7ffbec4aff369b2e96a65633262d"
+      "address": "0x95268F0202bD6C49aAA18959273593aeC4F71fE6",
+      "transactionHash": "0x1d21f4bf95bd6213f41e939564dcf506f0cbc9b2254fbd0834453efd3d59ebeb"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-01T07:54:00.135Z",
+  "updatedAt": "2019-07-01T08:53:58.352Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {
