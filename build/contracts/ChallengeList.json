@@ -2633,12 +2633,12 @@
         }
       },
       "links": {},
-      "address": "0x145ee66a29C301840d5cB64E60BfEbc218932B80",
-      "transactionHash": "0x03db4648cb3eeecc747bfc213204c81364757d60a278a1b1acd43aa26c8c259f"
+      "address": "0x8C4d6b28A0Fb9b580Be1139Bc342FD695B809283",
+      "transactionHash": "0xd4b51c3a770cceae05cc6738251123d894bba8f6c475d8b79c55392db7789a54"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-01T04:55:42.545Z",
+  "updatedAt": "2019-07-01T07:53:59.897Z",
   "devdoc": {
     "author": "Jayce Azua",
     "details": "All function calls are currently implemented without side effects",
