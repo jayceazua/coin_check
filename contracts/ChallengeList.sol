@@ -1,9 +1,15 @@
 pragma solidity ^0.5.0;
 
+/// @title Military Coin Check - Challenge Coins
+/// @author Jayce Azua
+/// @notice This contact is for internal use only. Only possible way to use this contract is by purchasing challenge coins
+/// @dev All function calls are currently implemented without side effects
+
 contract ChallengeList {
   uint public challengeCount = 0;
 
   struct  Challenge {
+
     uint id; // unsigned integer number cannot be negative
     string content;
     // Medallion Owner: billet
@@ -22,7 +28,11 @@ contract ChallengeList {
   constructor() public {
     createChallenge("Visit the website militarycoincheck.com"); // activate your account
   }
-
+    /// @author Jayce Azua
+    /// @notice creates a smart contract for the challenges and increments the count each time it is created
+    /// @dev simply increments the count of the challenges
+    /// @param content the description of the challenge
+    /// @return nothing simply creates the challenge
   function createChallenge(string memory _content) public {
     challengeCount ++;
     challenges[challengeCount] = Challenge(challengeCount, _content, false);
